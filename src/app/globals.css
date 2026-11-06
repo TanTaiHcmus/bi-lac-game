@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-barlow-condensed);
+}
+
+@theme {
+  /* Foosball-table greens; the darkest is the tab bar and action docks. */
+  --color-pitch-50: #eef8f0;
+  --color-pitch-100: #d6efdb;
+  --color-pitch-500: #24a052;
+  --color-pitch-600: #1b8743;
+  --color-pitch-700: #157038;
+  --color-pitch-800: #10582c;
+  --color-pitch-900: #0b3f20;
+  --color-pitch-950: #062815;
+  --color-paper: #f2f4ef;
+}
+
+/* Mowed-grass stripes for green surfaces. */
+@utility pitch-stripes {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgb(255 255 255 / 0.06) 0 2.75rem,
+    transparent 2.75rem 5.5rem
+  );
+}
+
+/* Side padding that also clears the notch when a phone is held sideways. */
+@utility px-safe {
+  padding-inline: max(1rem, env(safe-area-inset-left), env(safe-area-inset-right));
+}
+
+:root {
+  color-scheme: light;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* No double-tap zoom on controls that get tapped quickly at the table. */
+a,
+button,
+label,
+input {
+  touch-action: manipulation;
+}
